@@ -1,0 +1,8 @@
+{
+  "name": "bug-report",
+  "version": 2,
+  "builds": [{ "src": "**/*.js", "use": "@now/node" }],
+  "env": {
+    "MONGODB_URI": "@my-mongodb-uri"
+  }
+}
