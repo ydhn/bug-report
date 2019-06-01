@@ -1,7 +1,22 @@
 {
   "name": "bug-report",
   "version": 2,
-  "builds": [{ "src": "**/*.js", "use": "@now/node" }],
+  "builds": [{ 
+    "src": "src/index.js", 
+    "use": "@now/node-server",
+    "config": {
+      "includeFiles": [
+        "models/**",
+        "routes/**"
+      ]
+    }
+  }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/index.js"
+    }
+  ],
   "env": {
     "MONGODB_URI": "@my-mongodb-uri"
   }
